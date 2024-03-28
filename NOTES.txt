@@ -1,0 +1,115 @@
+FLASK(7 concepts)
+1.Routing.
+2.Dynamic Routing.
+3.Python mysql connectivity.
+4.Forms.
+5.Login,Registration.
+6.Sessions.
+7.Jinja.
+
+
+1.Routing:
+Routing is nothing but navigating the web page with help of routes.
+
+*******************************************************************
+from flask import Flask
+new=Flask(__name__)
+@new.route('/')
+def hello():
+    return "HELLO DHULIPALA PREM ADITYA"
+@new.route('/hai')
+def hai():
+    return "How are you today"
+@new.route('/program')
+def name():
+    return "First program on flask"
+@new.route('/start')
+def start():
+    return "Write your first program"
+new.run(debug=True)
+
+'@'Decorative
+'__'dundur
+
+sytax to link css to flask:
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+
+Dynamic Routing:
+________________
+The use of the dynamic routing is to get dynamic data for every user using a website.
+syntax to install mysql-connector:
+pip install flask-mysql-connector	
+
+how to connect sql to flask:
+____________________________
+we can do it two ways either by import MySQL (or) import mysql.connector
+from flask import Flask,render_templet,request
+from flask_mysqldb import MySQL
+
+app = Flask(__name__)
+
+app.config['MYSQL_HOST'] = 'loacalhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'flask'
+
+mysql = MySQL(app)
+
+			(or)
+import mysql.connector
+mydb = mysql.connector.connect(host='localhost',user='root',password='system',db='prem')
+with
+mysql.connector.connect(host=host,password=password,user=user,db=db):
+	cursor=mydb.cursor(buffered=True)
+
+
+If you want to pass variables from one fuction to another function. It will be sent to the template in that template we use the form action,from there it will be sent to the url. 
+By that url the values will be sent to the another function.
+
+
+Sessions:
+session in flask are a way to store user specific information across multiple http requests.
+They allow you to keep track of user data such as login status,shopping cart items, perferences,etc...
+without needing to store this information on the client side. 
+CREATE TABLE posts (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) DEFAULT NULL,
+    content TEXT,
+    date_posted DATETIME DEFAULT CURRENT_TIMESTAMP,
+    slug VARCHAR(255) DEFAULT NULL,
+    poster_id VARCHAR(50) DEFAULT NULL, -- change the data type to match 'username'
+    PRIMARY KEY (id),
+    KEY poster_id (poster_id),
+    CONSTRAINT fk_poster_id FOREIGN KEY (poster_id) REFERENCES registration(username)
+);
+CREATE TABLE posts(id INT NOT NULL AUTO_INCREMENT,title VARCHAR(255) DEFAULT NULL,content TEXT,date_posted DATETIME DEFAULT CURRENT_TIMESTAMP,slug VARCHAR(255) DEFAULT NULL,poster_id VARCHAR(50) DEFAULT NULL,PRIMARY KEY(id),KEY poster_id (poster_id),CONSTRAINT fk_poster_id FOREIGN KEY(poster_id) REFERENCES registration(username)); 
+
+
+TO INSERT IMAGE IN THE DATABASE
+CREATE TABLE posts (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) DEFAULT NULL,
+    content TEXT,
+    date_posted DATETIME DEFAULT CURRENT_TIMESTAMP,
+    slug VARCHAR(255) DEFAULT NULL,
+    poster_id VARCHAR(50) DEFAULT NULL,
+    image LONGBLOB, -- New column to store image data
+    PRIMARY KEY(id),
+    KEY poster_id (poster_id),
+    CONSTRAINT fk_poster_id FOREIGN KEY(poster_id) REFERENCES registration(username)
+);
+<h1>Welcome to Our Blog</h1>
+            <p>Our blog is a platform where you can find insightful articles, helpful tips, and engaging content on various topics.</p>
+            <p>Whether you're interested in technology, travel, health, or anything in between, we've got you covered.</p>
+            <p>Stay tuned for regular updates and subscribe to our newsletter to never miss a post.</p>
+            <hr>
+            <h2>How to Use Our Blog:</h2>
+            <ol>
+                <li>Browse through our posts by clicking on "View Posts" in the navigation bar.</li>
+                <li>If you want to add a new post, click on "ADD POST" in the dropdown menu.</li>
+                <li>To update an existing post, select "UPDATE POST" from the dropdown menu.</li>
+                <li>Feel free to explore different categories and tags to find content that interests you.</li>
+                <li>If you're a registered user, you can log in to access additional features like commenting and liking posts.</li>
+            </ol>
+            <p>Start exploring and enjoy your reading!</p>

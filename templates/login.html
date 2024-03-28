@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-seriF;
+            background-image: url('https://media.istockphoto.com/id/1480388424/photo/digital-security-concept-biometric-fingerprint-censor-identification-integrated-in-cpu.jpg?s=1024x1024&w=is&k=20&c=BsRdGRunqUp5aptdKcKfm6Dvty9Obf86hiNtnm4xhbE=');
+            background-size: cover;
+            
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button[type="reset"] {
+            background-color: #f44336;
+        }
+        
+        button[type="submit"]:hover,
+        button[type="reset"]:hover {
+            opacity: 0.7;
+        }
+        h1{
+            color : #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>LOGIN PAGE</h1>
+    <form method="POST">
+        <label for="username">USERNAME:</label>
+        <input type="text" name="username" placeholder="Enter your name here"><br><br>
+        <label for="password">PASSWORD:</label>
+        <input type="password" name="password" placeholder="Enter your password"><br><br>
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+    </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://t3.ftcdn.net/jpg/02/10/55/60/240_F_210556027_pNmg4EUFwrn2W25SDdWayPakVIztTSe8.jpg');
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        
+        center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color : #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);   
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Registration Page</h1>
+        <form method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter your full name">
+            <label for="mobile">Mobile No:</label>
+            <input type="text" name="mobile" placeholder="Enter your mobile number">
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="Enter your email">
+            <label for="address">Address:</label>
+            <input type="text" name="address" placeholder="Enter your current address">
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Enter your password">
+            <button type="submit">Submit</button>
+        </form>
+    </center>
+</body>
+</html>
